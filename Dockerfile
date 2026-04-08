@@ -3,6 +3,8 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG TARGETARCH
 WORKDIR /source
 
+ENV GITHUB_TOKEN=ghp_12DAQ1B6mS2BnXW2xAGjzzzzzzzzzzzzzzzz
+
 # Copy project file and restore as distinct layers
 COPY --link *.csproj .
 RUN dotnet restore -a $TARGETARCH
